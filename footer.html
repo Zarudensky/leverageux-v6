@@ -1,0 +1,252 @@
+<div class="lines__block footer__lines"></div>
+<div class="footer__block footer__block_title">
+    <h3 class="footer__title">Ready to discuss your project?</h3>
+</div>
+<div class="footer__block footer__block_feedback">
+    <div class="feedback feedback__founders">
+        <div class="founder founder__first">
+            <p class="founder__location">Europe, Australia</p>
+            <img class="founder__photo" src="./img/about/photo_1.png" alt="photo_1">
+            <p class="founder__name">Roman Leshchyk</p>
+            <p class="founder__position">Founder, CEO</p>
+            <a class="founder__email" onclick="sendEventEmailFirst()" id="email_fr_1" href="mailto:roman@leverageux.com">Roman@LeverageUX.com </a>
+            <a class="founder__calendar" id="calendar_fr_1" href="https://calendly.com/leverageux-agency/intro" target=_blank>Schedule a call</a>
+        </div>
+        <div class="founder founder__second">
+            <p class="founder__location">USA, Europe</p>
+            <img class="founder__photo" src="./img/photo_2.png" alt="photo_2">
+            <p class="founder__name">Anton Korolyk</p>
+            <p class="founder__position">Co-Founder, CBDO</p>
+            <a class="founder__email" onclick="sendEventEmailSecond()" id="email_fr_2" href="mailto:anton@leverageux.com">Anton@LeverageUX.com</a>
+            <a class="founder__calendar" id="calendar_fr_2" href="https://calendly.com/leverageux/intro" target=_blank>Schedule a call</a>
+        </div>
+    </div>
+    <div class="feedback feedback__form">
+        <div class="form__container">
+            <input type="text" class="validation validation__footer-form feedback__form-input" id="nameFooter" name="name" placeholder="Name">
+            <input type="email" class="validation validation__footer-form validation__footer-email feedback__form-input" id="emailFooter" name="email" placeholder="Email">
+            <textarea class="validation validation__footer-form validation__textarea feedback__form-descr" id="descrFooter" name="message" placeholder="Message"></textarea>
+            <div class="validation__text validation__text-footer">
+                <img src="./img/estimate/invalid.svg" alt="invalid">
+                <span class="valid__text valid__text-all_forms">please fill these fields</span>
+            </div>
+            <button class="btn btn__feedback" id="formBtnFooter">Send</button>
+        </div>
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close">
+                    <svg xml:space="preserve" enable-background="new 0 0 15 15" height="15px" id="cross" version="1.1" viewBox="0 0 15 15" width="15px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+                        <path d="M5.792,7.499L0,0.707l0.708-0.706L7.497,5.79L7.5,5.793L14.293,0L15,0.707L9.207,7.5l0.001,0.001L15,14.293
+                        l-0.708,0.706L7.503,9.21L7.5,9.207L0.707,15L0,14.293L5.792,7.499L5.792,7.499z"/>
+                    </svg>
+                </span>
+                <div class="feedback__message-send">Thanks, your letter sent.</div>
+                <div class="feedback__message-notsend">Sorry, your letter not sent.</div>
+            </div>
+            <div class="modal__back"></div>
+        </div>
+    </div>
+</div>
+<div class="footer__block footer__block_contacts">
+    <div class="footer__block_logo">
+        <div class="footer__line footer__line_left"></div>
+        <a class="footer__logo" href="./">Leverage<span>UX</span></a>
+        <div class="footer__line footer__line_right"></div>
+    </div>
+    <div class="footer__contacts">
+        
+        <div class="contacts__block">
+            <p>Sepapaja 6, 15551, <br>Tallinn, Estonia</p>
+        </div>
+        <div class="contacts__block">
+            <p>Tronador 3430, 1430,<br>Buenos Aires, Argentina</p>
+        </div>
+        <div class="contacts__block">
+            <div id="clutch" class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="50" data-clutchcompany-id="1396899">
+                <svg class="cw__svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" viewBox="0 0 19.5 22"><path fill="#fff" d="M15.2 15.6c-1.1 1-2.6 1.6-4.2 1.6-3.6 0-6.2-2.6-6.2-6.2S7.4 4.9 11 4.9c1.6 0 3.1.5 4.2 1.5l.8.7 3.4-3.4-.9-.8C16.6 1 13.9 0 11 0 4.6 0 0 4.6 0 10.9 0 17.2 4.7 22 11 22c2.9 0 5.6-1 7.6-2.9l.8-.8-3.4-3.4-.8.7z"/><circle fill="#ff3d2e" cx="10.8" cy="11" r="3.7"/></svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	function validation() {
+		let valid = true;
+		$('.validation__footer-form').each(function() {
+		  if(!$(this).val().length >= 1){
+				$(this).addClass('invalid');
+				validText();
+				valid = false;
+				var errorInput = $(this).attr('name');
+				var eventActionInput = 'validation error - ' + errorInput;
+				dataLayer.push({
+					'eventCategory': 'form',
+					'eventAction': eventActionInput,
+					'eventLabel': 'footer', 
+					'event': 'autoEvent',
+				});
+			}
+		});
+		if( !validEmail($('.validation__footer-email').val())) {
+			$('.validation__footer-email').addClass('invalid');
+			$('.validation__text-footer').addClass('active');
+			valid = false;
+		}
+		return valid;
+	}
+	function validEmail(email) {
+	  var regexEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	  return regexEmail.test(email);
+	}
+	function validText() {
+		$('.validation__footer-form').each(function() {
+		  if(!$(this).val().length >= 1){
+		  	$('.validation__text-footer').addClass('active');
+		  } else {
+				$('.validation__text-footer').removeClass('active');
+			}
+		});
+	}
+	$('.validation__footer-form').focus(function() {
+		$(this).removeClass('invalid');
+	});
+	$('.validation__textarea').keyup(function() {
+		validText();
+	});
+
+	$('#formBtnFooter').click(function() {
+		if (validation()) {
+			sendForm()
+		}
+	});
+
+	function sendForm() {
+		var firstname = $('#nameFooter').val();
+		var email = $('#emailFooter').val();
+		var descr = $('#descrFooter').val();
+
+		var feedbackModal = $('#feedbackModal');
+		var feedbackMessageSend = $('.feedback__message-send');
+		var feedbackMessageNotSend = $('.feedback__message-notsend');
+
+		var leadStatus = 'Interest';
+		var contactType = 'Prospect';
+		var source = 'Website';
+		var leadGeneration = 'Inbound';
+
+		var xhr = new XMLHttpRequest();
+		var url = 'https://api.hsforms.com/submissions/v3/integration/submit/6484354/ba6957be-53f3-4cc6-877f-d0dc0d677081'
+		// Example request JSON:
+		var data = {
+			"fields": [
+				{
+					"name": "firstname",
+					"value": firstname
+				},
+				{
+					"name": "email",
+					"value": email
+				},
+				{
+					"name": "description",
+					"value": descr
+				},
+				{
+					"name": "hs_lead_status",
+					"value": leadStatus
+				},
+				{
+					"name": "contact_type",
+					"value": contactType
+				},
+				{
+					"name": "source",
+					"value": source
+				},
+				{
+					"name": "lead_generation",
+					"value": leadGeneration
+				}
+			]
+		}
+		var final_data = JSON.stringify(data)
+		xhr.open('POST', url);
+		// Sets the value of the 'Content-Type' HTTP request headers to 'application/json'
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		xhr.onreadystatechange = function() {
+			$('#nameFooter').val('');
+			$('#emailFooter').val('');
+			$('#descrFooter').val('');
+			$('.validation__text').removeClass('active');
+
+			if(xhr.readyState == 4 && xhr.status == 200) { 
+				$(feedbackMessageNotSend).hide();
+				$(feedbackMessageSend).show();
+				$(feedbackModal).show();
+				dataLayer.push({
+					'eventCategory': 'form',
+					'eventAction': 'sent',
+					'eventLabel': 'footer', 
+					'event': 'autoEvent',
+				});				
+			} else if (xhr.readyState == 4 && xhr.status == 400){
+				$(feedbackMessageSend).hide();
+				$(feedbackMessageNotSend).show();
+				$(feedbackModal).show();
+				console.log(xhr.responseText);
+				var error = JSON.parse(xhr.responseText);
+				var errorText = error.errors[0].errorType;
+				var eventActionText = 'error - ' + errorText;
+				dataLayer.push({
+					'eventCategory': 'form',
+					'eventAction': eventActionText,
+					'eventLabel': 'footer', 
+					'event': 'autoEvent',
+				});				
+			} else if (xhr.readyState == 4 && xhr.status == 403){ 
+				$(feedbackMessageSend).hide();
+				$(feedbackMessageNotSend).show();
+				$(feedbackModal).show();
+				console.log(xhr.responseText);
+				var error = JSON.parse(xhr.responseText);
+				var errorText = error.errors[0].errorType;
+				var eventActionText = 'error - ' + errorText;
+				dataLayer.push({
+					'eventCategory': 'form',
+					'eventAction': eventActionText,
+					'eventLabel': 'footer', 
+					'event': 'autoEvent',
+				});
+			} else if (xhr.readyState == 4 && xhr.status == 404){ 
+				$(feedbackMessageSend).hide();
+				$(feedbackMessageNotSend).show();
+				$(feedbackModal).show();
+				console.log(xhr.responseText);
+				var error = JSON.parse(xhr.responseText);
+				var errorText = error.errors[0].errorType;
+				var eventActionText = 'error - ' + errorText;
+				dataLayer.push({
+					'eventCategory': 'form',
+					'eventAction': eventActionText,
+					'eventLabel': 'footer', 
+					'event': 'autoEvent',
+				});
+			}
+
+			function hideModalAndMessages(){
+				$(feedbackModal).hide();
+				$(feedbackMessageNotSend).hide();
+				$(feedbackMessageSend).hide();
+			}
+			setTimeout(hideModalAndMessages, 3000);
+		} 
+		// Sends the request	    
+		xhr.send(final_data)	
+	}
+
+    $('.close, .modal__back').click(function() {
+		$('#feedbackModal').hide();
+		$('.feedback__message-send').hide();
+		$('.feedback__message-notsend').hide();
+	});
+</script>
