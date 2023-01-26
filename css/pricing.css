@@ -127,7 +127,7 @@
 .radio__switch {
   position: relative;
   display: inline-flex;
-  width: 182px;
+  width: 200px;
   height: 40px;
   background: #E6E6E6;
   border: 1px solid #CFCFCF;
@@ -147,7 +147,7 @@
   position: relative;
   z-index: 2;
   display: block;
-  width: 91px;
+  width: 100px;
   color: #888;
   text-align: center;
   font-family: Ekibastuz;
@@ -191,11 +191,11 @@
   position: absolute;
   z-index: 1;
   top: 0;
-  left: -91px;
+  left: -100px;
   border-radius: 20px;
   background-color: #00A2B8;
   height: 40px;
-  width: 98px;
+  width: 100px;
   transition: transform 0.3s;
 }
 .radio__switch:hover {
@@ -203,7 +203,7 @@
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
 }
 .radio__switch-input:checked ~ .radio__switch-marker {
-  transform: translateX(84px);
+  transform: translateX(100px);
 }
 
 .desktop__price .desktop,
@@ -665,6 +665,9 @@
   }
   .pm__block.pm__mvp.active .pm__block_title {
     color: #bb11a3;
+  }
+  .mvp .dots p.active {
+    background: #bb11a3;
   }
   .pack__block_time {
     margin-bottom: 34px;
