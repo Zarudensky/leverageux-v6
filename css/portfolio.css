@@ -31,26 +31,35 @@
 }
 .data__container_block {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-.data__container_block-last {
-  margin-left: -25px;
-}
 .data__container_number {
   position: relative;
-  margin-right: 12px;
+  font-family: 'Elephant';
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 135px;
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+  color: #4A4A4A;
+}
+.data__container_number:after {
+  position: absolute;
+  top: 20px;
+  right: -40px;
+  content: '+';
+  font-family: 'Elephant';
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 54px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  color: #4A4A4A;
 }
 .data__container_description {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  height: 85px;
-  margin-top: 20px;
-}
-.data__container_description.center {
-  margin-top: 7px;
 }
 .data__container_description p {
   font-size: 18px;
@@ -60,10 +69,13 @@
   text-align: left;
   color: #6C6C6C;
 }
+.data__container_description img {
+  margin-right: 10px;
+}
 .data__container_line {
   width: 1px;
-  height: 44px;
-  background: #aaa;
+  height: 72px;
+  background: #D8D8D8;
 }
 .section__data_inscription {
   position: relative;
@@ -143,33 +155,14 @@
 @media screen and (max-width: 920px) {
   .data__container {
     flex-direction: column;
-    margin-bottom: 20px;
-  }
-  .data__container_number {
-    margin: 0 0 10px 0;
+    margin-bottom: 95px;
   }
   .data__container_block {
-    width: 200px;
-    flex-direction: column;
-    margin-bottom: 60px;
+    align-items: center;
   }
-  .data__container_description {
-    flex-direction: row;
-    height: auto;
-    margin-top: 0
-  }
-  .data__container_description.center {
-    margin-top: 0
-  }
-  .data__container_description img {
-    margin-right: 10px;
-  }
-  .data__container_description p {
-    font-size: 18px;
-    line-height: 24px;
-  }
-  .data__container_description p br {
-    display: none;
+  .data__container_number {
+    font-size: 100px;
+    line-height: 123px;
   }
 }
 @media screen and (max-width: 800px) {
