@@ -699,8 +699,8 @@ a {
   margin-bottom: 65px;
 }
 .footer__title {
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 40px;
+  line-height: 40px;
   text-align: center;
   color: #fff;
   text-transform: capitalize;
@@ -711,7 +711,6 @@ a {
 }
 .feedback__founders {
   display: flex;
-  margin-right: 90px;
 }
 .founder {
   display: flex;
@@ -719,8 +718,8 @@ a {
   align-items: center;
   letter-spacing: 0.04em;
 }
-.founder__first {
-  margin-right: 25px;
+.founder__first, .founder__second {
+  margin-right: 66px;
 }
 .founder__location {
   font-weight: bold;
@@ -1167,6 +1166,7 @@ textarea:focus {
     height: 925px;
   }
 }
+
 @media screen and (max-width: 1445px) {
   .footer {
     height: 950px;
@@ -1187,6 +1187,7 @@ textarea:focus {
     height: 890px;
   }
 }
+
 @media screen and (max-width: 1260px) {
   .section__container_text {
     max-width: 415px;
@@ -1212,6 +1213,7 @@ textarea:focus {
     line-height: 20px;
   }
 }
+
 @media screen and (max-width: 1220px) {
   .header__block_menu.active {
     display: flex;
@@ -1393,6 +1395,7 @@ textarea:focus {
     display: none;
   }
 }
+
 @media screen and (max-width: 1155px) {
   .how__block_description {
     font-size: 14px;
@@ -1409,6 +1412,7 @@ textarea:focus {
     padding: 100px 15px;
   }
 }
+
 @media screen and (max-width: 1080px) {
   .section__crypt .section__block {
     margin-top: 23px;
@@ -1453,17 +1457,20 @@ textarea:focus {
     -khtml-background-size: auto;
   }
 }
+
 @media screen and (max-width: 1020px) {
   .section__container_img {
     height: 450px;
   }
 }
+
 @media screen and (max-width: 992px) {
   .scrollup {
     bottom: 35px;
     right: 35px;
   }
 }
+
 @media screen and (max-width: 960px) {
   .section__container {
     position: relative;
@@ -1542,6 +1549,7 @@ textarea:focus {
     display: none;
   }
 }
+
 @media screen and (max-width: 800px) {
   .footer {
     background-image: url(../img/footer_mobile.svg);
@@ -1579,6 +1587,7 @@ textarea:focus {
     display: inline;
   }
 }
+
 @media screen and (max-width: 700px) {
   .section__main {
     -o-background-size: 200%;
@@ -1588,6 +1597,13 @@ textarea:focus {
     background-size: 200%;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .founder__first, .founder__second {
+    margin-right: 35px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .section__board {
     margin-bottom: 0;
@@ -1645,6 +1661,20 @@ textarea:focus {
     line-height: 20px;
   }
 }
+
+@media screen and (max-width: 585px) {
+  .feedback__founders {
+    flex-direction: column;
+  }
+  .founder__first, .founder__second {
+    margin-right: 0;
+    margin-bottom: 35px;
+  }
+  .founder__email {
+    margin-bottom: 12px;
+  }
+}
+
 @media screen and (max-width: 560px) {
   .scrollup {
     bottom: 15px;
@@ -1655,6 +1685,7 @@ textarea:focus {
     left: calc(50% - 90px);
   }
 }
+
 @media screen and (max-width: 460px) {
   .header__btn_ep {
     display: none;
@@ -1689,6 +1720,7 @@ textarea:focus {
     animation: moveRightLineTwo 1.0s 1 ease;
   }
 }
+
 @media screen and (max-width: 440px) {
   .img__block.img__lines {
     height: 165px;
@@ -1703,6 +1735,7 @@ textarea:focus {
     -khtml-background-size: 200%;
   }
 }
+
 @media screen and (max-width: 400px) {
   .img__block.img__lines {
     height: 155px;
@@ -1715,18 +1748,7 @@ textarea:focus {
     background-position: 32% 80%;
   }
 }
-@media screen and (max-width: 380px) {
-  .feedback__founders {
-    flex-direction: column;
-  }
-  .founder__first {
-    margin-right: 0;
-    margin-bottom: 35px;
-  }
-  .founder__email {
-    margin-bottom: 12px;
-  }
-}
+
 @media screen and (max-width: 360px) {
   .footer__lines {
     background-position: 32% 82%;
@@ -1827,11 +1849,13 @@ textarea:focus {
     background-image: url(../img/footer_lines_2.svg);
   }
 }
+
 @media screen and (min-width: 2000px) {
   .hero__lines {
     height: 340px;
   }
 }
+
 @media screen and (min-width: 2230px) {
   body.portfolio__page .section__hero,
   body.design__page .section__hero,
@@ -1843,16 +1867,19 @@ textarea:focus {
     height: 360px;
   }
 }
+
 @media screen and (min-width: 2350px) {
   .hero__lines {
     height: 380px;
   }
 }
+
 @media screen and (min-width: 2480px) {
   .hero__lines {
     height: 400px;
   }
 }
+
 @media screen and (min-width: 2560px) {
   body.portfolio__page .section__hero,
   body.design__page .section__hero,
@@ -1864,16 +1891,19 @@ textarea:focus {
     height: 420px;
   }
 }
+
 @media screen and (min-width: 2600px) {
   .hero__lines {
     height: 450px;
   }
 }
+
 @media screen and (min-width: 2700px) {
   .hero__lines {
     height: 500px;
   }
 }
+
 @media screen and (min-width: 3200px) {
   .hero__lines {
     height: 600px;
