@@ -139,9 +139,6 @@
   .portfolio__page .section__container_text {
     margin-top: 0;
   }
-  .data__container_line {
-    display: none;
-  }
   .section__broker span.pt_4 {
     margin-right: 6px;
   }
@@ -159,10 +156,14 @@
   }
   .data__container_block {
     align-items: center;
+    margin-bottom: 60px;
   }
   .data__container_number {
     font-size: 100px;
     line-height: 123px;
+  }
+  .data__container_line {
+    display: none;
   }
 }
 @media screen and (max-width: 800px) {

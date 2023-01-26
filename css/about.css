@@ -22,31 +22,48 @@
 }
 .about__container_block {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
+}
+.about__container_block:last-child {
+  margin-right: 35px;
 }
 .about__container_number {
   position: relative;
-  margin-right: 5px;
+  font-family: 'Elephant';
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 135px;
+  letter-spacing: -0.04em;
+  text-transform: capitalize;
+  color: #00A2B8;
 }
 .about__container_number:after {
   position: absolute;
-  top: 0;
-  right: -30px;
-  content: url(../img/about/plus.svg);
+  top: 11px;
+  right: -43px;
+  content: '+';
+  font-family: 'Elephant';
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 54px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  color: #00A2B8;
 }
 .about__container_descr {
-  text-align: left;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
+  text-align: left;
   color: #6C6C6C;
 }
 .about__container_line {
   width: 1px;
-  height: 44px;
-  background: #aaa;
+  height: 72px;
+  background: #D8D8D8;
 }
 .about__container_fourth {
   display: flex;
@@ -271,9 +288,6 @@
   }
 }
 @media screen and (max-width: 960px) {
-  .about__container_line {
-    display: none;
-  }
   .persone_photo {
     width: 100px;
     height: auto;
@@ -286,24 +300,27 @@
 @media screen and (max-width: 920px) {
   .section__about_container {
     flex-direction: column;
-    margin-bottom: 20px;
-  }
-  .about__container_number img {
-    height: 85px;
-    margin-bottom: 7px;
+    margin-bottom: 95px;
   }
   .about__container_block {
-    flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
   }
-  .about__container_descr {
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
+  .about__container_block:last-child {
+    margin: 0;
+  }
+  .about__container_number {
+    font-size: 100px;
+    line-height: 123px;
   }
   .about__container_number:after {
-    top: 65px;
+    top: 8px;
+  }
+  .about__container_descr {
+    text-align: center;
+  }
+  .about__container_line {
+    display: none;
   }
 }
 @media screen and (max-width: 860px) {
